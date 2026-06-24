@@ -1,0 +1,6 @@
+@puno_api_HostAddress = http://localhost:5202
+
+GET {{puno_api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

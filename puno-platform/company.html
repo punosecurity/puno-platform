@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#070A12" />
+  <title>PUNO — Kompani</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="noise"></div></div>
+  <a class="skip-link" href="#main">Skip</a>
+
+  <header class="topbar" role="banner">
+    <div class="container topbar__inner">
+      <a class="brand" href="index.html" aria-label="PUNO Home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 42V22c0-2.2 1.8-4 4-4h16" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M44 22v20c0 2.2-1.8 4-4 4H24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M24 26h16M24 38h16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand__name">PUNO</span>
+        <span class="brand__tag">Kompani</span>
+      </a>
+      <nav class="nav" aria-label="Kryesore">
+        <a class="nav__link" href="jobs.html">Punë</a>
+        <a class="nav__link" href="companies.html">Kompani</a>
+        <a class="nav__link" href="students.html">Studentë</a>
+        <a class="nav__link" href="diaspora.html">Diasporë</a>
+        <a class="nav__link nav__link--cta" href="login.html">Hyr</a>
+      </nav>
+      <button class="burger" type="button" aria-label="Hap menunë" aria-expanded="false" data-burger>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" data-mobile-nav>
+      <div class="container mobile-nav__inner">
+        <a class="nav__link" href="jobs.html">Punë</a>
+        <a class="nav__link" href="companies.html">Kompani</a>
+        <a class="nav__link" href="students.html">Studentë</a>
+        <a class="nav__link" href="diaspora.html">Diasporë</a>
+        <a class="nav__link nav__link--cta" href="login.html">Hyr</a>
+        <a class="nav__link nav__link--ghost" href="register.html">Regjistrohu</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="section" style="padding-top:18px">
+    <div class="container">
+      <a class="link" href="companies.html" style="display:inline-block; margin-bottom:14px; color:rgba(198,246,255,.92); font-weight:900">← Kthehu te kompanitë</a>
+
+      <div class="grid-2" id="company-shell">
+        <section class="glass-panel" data-elevate>
+          <div class="section__head section__head--compact">
+            <div>
+              <h1 class="h1" id="company-name" style="font-size:clamp(24px,2.6vw,34px); margin:0">—</h1>
+              <div class="sub" id="company-city">—</div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:14px">
+            <div class="card__top">
+              <div>
+                <div class="glass-card__label">Brand & kulturë</div>
+                <div class="card__title" style="margin-top:10px" id="company-focus">—</div>
+                <div class="card__meta" id="company-meta" style="margin-top:8px"></div>
+              </div>
+              <div>
+                <div class="avatar" aria-hidden="true" style="width:54px;height:54px; border-radius:18px"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-panel" style="margin-top:14px" data-elevate>
+            <div class="section__head section__head--compact" style="margin-bottom:10px">
+              <div>
+                <h2 class="h2" style="font-size:16px; font-weight:1000">Komentet</h2>
+                <p class="sub" style="margin-top:6px">Çfarë thonë kandidatët.</p>
+              </div>
+            </div>
+            <div class="testimonials" data-list="company-reviews"></div>
+          </div>
+        </section>
+
+        <aside class="glass-panel" data-elevate>
+          <div class="section__head section__head--compact" style="margin-bottom:12px">
+            <div>
+              <h2 class="h2" style="font-size:16px; font-weight:1000">Pozicione të hapura</h2>
+              <p class="sub">Aplikimi bëhet nga PUNO (simulim).</p>
+            </div>
+          </div>
+
+          <div class="cards cards--3" style="grid-template-columns: 1fr;" data-list="company-jobs"></div>
+
+          <a class="btn" href="jobs.html" style="width:100%; justify-content:center; margin-top:14px">
+            Shiko të gjitha punët
+            <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__grid">
+      <div><div class="footer-brand"><span class="brand__name">PUNO</span><span class="footer-brand__sub">Premium job platformë</span></div></div>
+      <div><div class="footer-col__title">Faqe</div><a class="footer-link" href="jobs.html">Punë</a><a class="footer-link" href="companies.html">Kompani</a></div>
+      <div><div class="footer-col__title">Llogaria</div><a class="footer-link" href="login.html">Hyr</a><a class="footer-link" href="register.html">Regjistrohu</a></div>
+      <div><div class="footer-col__title">Kontakt</div><a class="footer-link" href="contact.html">Na shkruaj</a></div>
+    </div>
+    <div class="footer-bottom"><div class="container footer-bottom__inner"><span class="muted">© <span id="year"></span> PUNO.</span></div></div>
+  </footer>
+
+  <script src="app.js" defer></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const name = params.get('name') || 'NEXA Labs';
+
+    const companies = {
+      'NEXA Labs': {
+        city:'Prishtinë',
+        focus:'Softuer • Produkte',
+        meta:['⭐ 4.7/5 vlerësim','👥 120+ punonjës','🧠 Fokus te cilësia'],
+        reviews:[
+          {n:'Besnik R.', r:'IT', q:'“Proces i qartë intervistimi dhe feedback i shpejtë.”'},
+          {n:'Mira H.', r:'Product', q:'“Mjedis profesional, shumë respekt për kohën e kandidatëve.”'},
+          {n:'Driton P.', r:'Full Stack', q:'“Trajnime reale. Aplikimi në PUNO ishte i lehtë.”'}
+        ],
+        jobs:[
+          {title:'Programues Full Stack', city:'Prishtinë', salary:'1,400–2,200€', tag:'IT', id:'j1'},
+          {title:'Inxhinier Softuerik', city:'Prizren', salary:'1,300–2,000€', tag:'IT', id:'j2'}
+        ]
+      },
+      'Studio Aurora': {
+        city:'Prizren',
+        focus:'Dizajn • Branding',
+        meta:['⭐ 4.6/5 vlerësim','🎨 35+ projekte në vit','🤍 Fokus te dizajni'],
+        reviews:[
+          {n:'Elira K.', r:'Dizajn', q:'“Super kulturë krijuese. Qartësohen pritshmëritë.”'},
+          {n:'Arben D.', r:'Branding', q:'“Mentorim dhe standarde të larta. PUNO e bëri më të lehtë.”'}
+        ],
+        jobs:[
+          {title:'Dizajner Grafik', city:'Pejë', salary:'900–1,300€', tag:'Dizajn', id:'j3'}
+        ]
+      }
+    };
+
+    const c = companies[name] || Object.values(companies)[0];
+    document.getElementById('company-name').textContent = name;
+    document.getElementById('company-city').textContent = c.city;
+    document.getElementById('company-focus').textContent = c.focus;
+
+    const metaEl = document.getElementById('company-meta');
+    if(metaEl) metaEl.innerHTML = c.meta.map(x=>`<span>• ${x}</span>`).join('');
+
+    const rEl = document.querySelector('[data-list="company-reviews"]');
+    if(rEl){
+      rEl.innerHTML = c.reviews.map(t=>`
+        <div class="t-item">
+          <div class="t-top">
+            <div class="avatar" aria-hidden="true"></div>
+            <div>
+              <div class="t-name">${t.n}</div>
+              <div class="t-role">${t.r}</div>
+            </div>
+          </div>
+          <div class="t-quote">${t.q}</div>
+        </div>
+      `).join('');
+    }
+
+    const jEl = document.querySelector('[data-list="company-jobs"]');
+    if(jEl){
+      jEl.innerHTML = c.jobs.map(j=>`
+        <a class="card" href="job.html?id=${encodeURIComponent(j.id)}">
+          <div class="card__top">
+            <div class="tag tag--money">${j.salary}</div>
+            <div class="tag">${j.tag}</div>
+          </div>
+          <div class="card__title" style="margin-top:12px">${j.title}</div>
+          <div class="card__meta"><span>📍 ${j.city}</span></div>
+        </a>
+      `).join('');
+    }
+
+    const yearEl = document.getElementById('year');
+    if(yearEl) yearEl.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+

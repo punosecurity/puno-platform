@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#070A12" />
+  <title>PUNO — Platformë Punësimi për Kosovë & Shqipëri</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/PUNO.jpg" type="image/jpeg" />
+  <link rel="apple-touch-icon" href="assets/PUNO.jpg" />
+
+
+</head>
+<body>
+
+  <!-- Ambient / noise (no external assets) -->
+  <div class="bg" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="noise"></div>
+  </div>
+
+  <a class="skip-link" href="#main">Skip</a>
+
+  <header class="topbar" role="banner">
+    <div class="container topbar__inner">
+      <a class="brand" href="index.html" aria-label="PUNO Home">
+        <span class="brand__mark" aria-hidden="true">
+          <img src="assets/PUNO.jpg" alt="" width="22" height="22" style="object-fit:cover; border-radius:10px;" />
+        </span>
+        <span class="brand__name">PUNO</span>
+
+        <span class="brand__tag">Kosovë • Shqipëri</span>
+      </a>
+
+      <nav class="nav" aria-label="Kryesore">
+        <a class="nav__link" href="jobs.html">Punë</a>
+        <a class="nav__link" href="companies.html">Kompani</a>
+        <a class="nav__link" href="students.html">Studentë</a>
+        <a class="nav__link" href="diaspora.html">Diasporë</a>
+        <a class="nav__link nav__link--cta" href="login.html">Hyr</a>
+      </nav>
+
+      <button class="burger" type="button" aria-label="Hap menunë" aria-expanded="false" data-burger>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-nav" data-mobile-nav>
+      <div class="container mobile-nav__inner">
+        <a class="nav__link" href="jobs.html">Punë</a>
+        <a class="nav__link" href="companies.html">Kompani</a>
+        <a class="nav__link" href="students.html">Studentë</a>
+        <a class="nav__link" href="diaspora.html">Diasporë</a>
+        <a class="nav__link nav__link--cta" href="login.html">Hyr</a>
+        <a class="nav__link nav__link--ghost" href="register.html">Regjistrohu</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__left">
+<div class="pill">
+            <span class="pill__dot" aria-hidden="true"></span>
+            <span>Platformë premium punësimi</span>
+            <span class="pill__sep" aria-hidden="true">•</span>
+            <span>Kërko në mënyrë të shpejtë</span>
+          </div>
+
+          <h1 class="h1">
+            Gjej punën tënde në kohë reale — <span class="grad">për Kosovë & Shqipëri</span>.
+          </h1>
+          <p class="lead">
+            Kurseni orë aplikimi. Shfleto pozicione, shiko kompanitë, ruaj favoritet dhe aplikoni me një klik.
+          </p>
+
+          <div class="hero__trust" role="list" aria-label="Besimi">
+            <div class="trust" role="listitem">
+              <div class="trust__icon" aria-hidden="true">⚡</div>
+              <div>
+                <div class="trust__title">Aplikim i shpejtë</div>
+                <div class="trust__sub">CV & profil në vend</div>
+              </div>
+            </div>
+            <div class="trust" role="listitem">
+              <div class="trust__icon" aria-hidden="true">🔎</div>
+              <div>
+                <div class="trust__title">Kërkim i saktë</div>
+                <div class="trust__sub">Kategoria, qyteti, paga</div>
+              </div>
+            </div>
+            <div class="trust" role="listitem">
+              <div class="trust__icon" aria-hidden="true">🏢</div>
+              <div>
+                <div class="trust__title">Kompani reale</div>
+                <div class="trust__sub">Pozicione & rishikime</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__right">
+          <div class="glass-card hero-search" data-elevate>
+            <div class="hero-search__top">
+              <div>
+                <div class="glass-card__label">Kërko punë</div>
+                <div class="hero-search__title">Gjej pozicione për ty</div>
+              </div>
+              <span class="badge badge--soft">Live</span>
+            </div>
+
+            <form class="searchbar" action="jobs.html" method="get" data-searchbar>
+              <label class="sr-only" for="q">Kërko</label>
+              <div class="searchbar__row">
+                <div class="field field--icon">
+                  <span class="field__icon" aria-hidden="true">🔎</span>
+                  <input id="q" name="q" type="search" placeholder="P.sh. Programues Full Stack" autocomplete="off" />
+                </div>
+
+                <div class="field">
+                  <select name="city" aria-label="Qyteti">
+                    <option value="">Qyteti (të gjithë)</option>
+                    <option>Prishtinë</option>
+                    <option>Prizren</option>
+                    <option>Pejë</option>
+                    <option>Gjakovë</option>
+                    <option>Ferizaj</option>
+                    <option>Tiranë</option>
+                    <option>Durrës</option>
+                    <option>Shkodër</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="searchbar__row searchbar__row--bottom">
+                <div class="field field--inline">
+                  <span class="muted">Kategoria</span>
+                  <div class="chips" data-chips>
+                    <button type="button" class="chip is-active" data-chip value="">Të gjitha</button>
+                    <button type="button" class="chip" data-chip value="IT">IT</button>
+                    <button type="button" class="chip" data-chip value="Marketing">Marketing</button>
+                    <button type="button" class="chip" data-chip value="Financa">Financa</button>
+                    <button type="button" class="chip" data-chip value="Dizajn">Dizajn</button>
+                  </div>
+                  <input type="hidden" name="cat" value="" data-chip-hidden />
+                </div>
+
+                <button class="btn btn--primary" type="submit">
+                  Kërko
+                  <span class="btn__arrow" aria-hidden="true">→</span>
+                </button>
+              </div>
+
+              <p class="searchbar__hint">
+                Duke klikuar <b>Kërko</b> do të shfaqen rezultatet në <a href="jobs.html">Jobs</a>.
+              </p>
+            </form>
+          </div>
+
+          <div class="mini-grid" aria-label="Rekomandime">
+            <a class="mini-link" href="jobs.html?q=Programues%20Full%20Stack">
+              <span class="mini-link__k">Trendet</span>
+              <span class="mini-link__v">Full Stack</span>
+            </a>
+            <a class="mini-link" href="jobs.html?q=Dizajner%20Grafik">
+              <span class="mini-link__k">Sot</span>
+              <span class="mini-link__v">Dizajn Grafik</span>
+            </a>
+            <a class="mini-link" href="companies.html?q=Marketing">
+              <span class="mini-link__k">Kompanitë</span>
+              <span class="mini-link__v">Ekipet e marketingut</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <h2 class="h2">Punë të rekomanduara</h2>
+            <p class="sub">(demo) Në këtë version nuk shfaqen rekomandime të rreme.</p>
+          </div>
+          <a class="link" href="jobs.html">Shiko të gjitha punët <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="cards cards--3" data-list="featured-jobs"></div>
+
+        <div class="split" style="margin-top:28px">
+          <div>
+            <div class="section__head section__head--compact">
+              <div>
+                <h3 class="h3">Kompani të spikatura</h3>
+                <p class="sub">(demo) Nuk shfaqen kompani të rreme.</p>
+              </div>
+            </div>
+          </div>
+          <a class="link" href="companies.html">Shiko directory <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="cards cards--3" data-list="featured-companies"></div>
+
+        <!-- Stats -->
+        <div class="stats">
+          <div class="stat">
+            <div class="stat__value">1,200+</div>
+            <div class="stat__label">pozicione të publikuara</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">350+</div>
+            <div class="stat__label">kompani aktive</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">10k+</div>
+            <div class="stat__label">profile & CV</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">24/7</div>
+            <div class="stat__label">watchlist & njoftime</div>
+          </div>
+        </div>
+
+        <!-- Testimonials / Success stories -->
+        <div class="grid-2" style="margin-top:26px">
+          <div class="glass-panel" data-elevate>
+            <div class="section__head section__head--compact">
+              <div>
+                <h3 class="h3">Dëshmi të kandidatëve</h3>
+                <p class="sub">“Rezultatet erdhën shpejt.”</p>
+              </div>
+            </div>
+            <div class="testimonials" data-list="testimonials"></div>
+          </div>
+
+          <div class="glass-panel" data-elevate>
+            <div class="section__head section__head--compact">
+              <div>
+                <h3 class="h3">Histori suksesi</h3>
+                <p class="sub">Nga aplikim te oferta — brenda javësh.</p>
+              </div>
+            </div>
+            <div class="stories" data-list="stories"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="container footer__grid">
+        <div>
+          <div class="footer-brand">
+            <span class="brand__name">PUNO</span>
+            <span class="footer-brand__sub">Premium job platformë për Kosovë & Shqipëri</span>
+          </div>
+          <p class="muted" style="margin-top:10px; max-width:44ch;">
+            Kërko, ruaj dhe apliko. Qartësi për kandidatët dhe pozicione të sakta për punëdhënësit.
+          </p>
+        </div>
+        <div>
+          <div class="footer-col__title">Faqe</div>
+          <a class="footer-link" href="jobs.html">Punë</a>
+          <a class="footer-link" href="companies.html">Kompani</a>
+          <a class="footer-link" href="students.html">Studentë</a>
+          <a class="footer-link" href="diaspora.html">Diasporë</a>
+        </div>
+        <div>
+          <div class="footer-col__title">Llogaria</div>
+          <a class="footer-link" href="login.html">Hyr</a>
+          <a class="footer-link" href="register.html">Regjistrohu</a>
+          <a class="footer-link" href="dashboard.html">Dashboard</a>
+        </div>
+        <div>
+          <div class="footer-col__title">Kontakt</div>
+          <a class="footer-link" href="contact.html">Na shkruaj</a>
+            <div class="footer-meta">
+            <div>Kontakti i Platformës PUNO</div>
+            <div><span aria-hidden="true">✉️</span> punosecurity@gmail.com</div>
+
+              <details style="line-height:1.55; border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:10px 12px; background:rgba(255,255,255,.04)">
+                <summary style="cursor:pointer; font-weight:950">Udhëzime ligjore & privatësi (kliko për t’i parë)</summary>
+
+                <div style="margin-top:10px">
+                  <div style="font-weight:950">Përmbajtja juridike sipas territorit</div>
+                  <div style="margin-top:6px"><b>Kosovë</b>: Në përputhje me ligjet në fuqi të Republikës së Kosovës (duke përfshirë rregullat për mbrojtjen e të dhënave personale dhe legjislacionin për shërbimet online).</div>
+                  <div><b>Shqipëri</b>: Në përputhje me legjislacionin në fuqi të Republikës së Shqipërisë (duke përfshirë rregullat për mbrojtjen e të dhënave personale dhe standardet e shërbimeve digjitale).</div>
+                  <div><b>Ndërkombëtare</b>: Në përputhje me detyrimet ligjore ndërkombëtare dhe standardet relevante për privatësinë/mbrojtjen e të dhënave (p.sh. parimet e “privacy by design”, minimizim i të dhënave, ligjshmëri & transparencë).</div>
+                </div>
+
+                <div style="margin-top:10px; color: rgba(245,245,247,.82)">
+                  • Si admin i vetëm, marr masat përkatëse dhe marr përgjegjësinë në rast të veprimeve të paligjshme, duke ndjekur procedurat ligjore me autoritetet kompetente.
+                </div>
+
+                <div style="margin-top:12px">
+                  <div style="font-weight:950">Udhëzime ligjore (për përdoruesit)</div>
+                  <div style="margin-top:6px">• Ligjet në fuqi (Kosovë, Shqipëri) dhe standardet për shërbime online aplikohen për përdorimin e platformës.</div>
+                  <div>• Ndalohet aktiviteti i paligjshëm: mashtrimi, shpërndarja e përmbajtjes së paautorizuar, shkelja e të drejtave të palëve të treta.</div>
+                  <div>• Raste të tilla trajtohen me masa përkatëse dhe, kur kërkohet, përmes procedurave ligjore me autoritetet kompetente.</div>
+                </div>
+
+                <div style="margin-top:12px">
+                  <div style="font-weight:950">Opsionet ligjore & kontrolli</div>
+                  <div style="margin-top:6px">• Si admin i vetëm, marr përgjegjësi për veprime të ligjshme dhe bashkëpunoj me autoritetet kur kërkohet.</div>
+                  <div>• Zbatohen procedurat për raportim, verifikim dhe ndërhyrje kur ka shkelje.</div>
+                </div>
+
+                <div style="margin-top:12px">
+                  <div style="font-weight:950">Privatësia & të dhënat personale</div>
+                  <div style="margin-top:6px">• Përpunim i të dhënave vetëm për qëllime të qarta: punëkërkim, aplikim, komunikim dhe funksionim i platformës.</div>
+                  <div>• Ruajtje e të dhënave vetëm për periudhën e nevojshme dhe sipas ligjit.</div>
+                  <div>• Masat e sigurisë për mbrojtjen e të dhënave personale nga akses/ndryshim i paautorizuar.</div>
+                  <div>• Trajtimi i kërkesave të subjekteve të të dhënave (qasje/korigjim/fshirje), sipas rastit dhe ligjit.</div>
+                  <div>• Parime të ngjashme me GDPR (kur është e aplikueshme): ligjshmëri, transparencë, minimizim, kufizim qëllimi.</div>
+                </div>
+
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom__inner">
+          <span class="muted">© <span id="year"></span> PUNO. Të gjitha të drejtat e rezervuara.</span>
+          <div class="footer-actions">
+            <a class="footer-chip" href="about.html">Rreth</a>
+            <a class="footer-chip" href="contact.html">Mbështetje</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="components/auth.js"></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
+
+
+

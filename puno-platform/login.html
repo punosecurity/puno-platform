@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#070A12" />
+  <title>PUNO — Hyr</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/PUNO.jpg" type="image/jpeg" />
+</head>
+<body>
+
+  <div class="bg" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="noise"></div></div>
+  <a class="skip-link" href="#main">Skip</a>
+
+  <div id="puno-navbar"></div>
+
+  <main id="main" class="section" style="padding-top:18px">
+
+    <div class="container" style="max-width:980px">
+      <div class="grid-2" style="grid-template-columns: 1fr 1fr">
+        <section class="glass-panel" data-elevate>
+          <div class="section__head section__head--compact" style="margin-bottom:12px">
+            <div>
+              <h1 class="h1" style="font-size:clamp(24px,2.8vw,34px); margin:0">Hyr në PUNO</h1>
+              <p class="sub" style="margin-top:8px">Krijo profil, ruaj punë dhe apliko me një klik (demo).</p>
+            </div>
+          </div>
+
+  <div class="card" style="padding:16px;">
+            <form id="puno-login-form">
+              <div style="display:grid; gap:12px">
+                <div class="field" style="display:flex;">
+                  <span class="field__icon" aria-hidden="true">👤</span>
+                  <input id="login-email" type="email" placeholder="Email" required />
+                </div>
+                <div class="field" style="display:flex;">
+                  <span class="field__icon" aria-hidden="true">🔒</span>
+                  <input id="login-password" type="password" placeholder="Fjalëkalimi" required />
+                </div>
+                <label style="display:flex; gap:10px; align-items:center; color:var(--muted2); font-weight:800; font-size:13px">
+                  <input id="login-remember" type="checkbox" />
+                  Mbaj mend
+                </label>
+
+                <button class="btn btn--primary" type="submit" style="width:100%; justify-content:center">Hyr</button>
+              </div>
+            </form>
+
+            <div id="puno-login-msg" style="margin-top:12px; display:none; padding:10px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.05); color:var(--muted); font-weight:800"></div>
+
+            <div style="margin-top:12px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap">
+              <a class="footer-link" style="display:inline-block; padding:0; text-decoration:underline; text-underline-offset:4px" href="#">Keni harruar fjalëkalimin?</a>
+              <a class="footer-link" style="display:inline-block; padding:0; text-decoration:underline; text-underline-offset:4px" href="register.html">Krijo llogari</a>
+            </div>
+          </div>
+        </section>
+
+        <aside class="glass-panel" data-elevate style="padding:16px">
+          <div class="glass-card__label">Pse PUNO?</div>
+          <div class="card__title" style="margin-top:10px; font-size:18px; font-weight:1000">Premium i vërtetë, jo vetëm UI</div>
+          <p class="sub" style="margin-top:10px; font-size:13.5px">Kërko më shpejt, ruaj më shpejt, apliko pa humbur kohë.</p>
+          <div style="margin-top:14px; display:grid; gap:10px">
+            <div class="t-item"><div style="font-weight:1000">Filtra inteligjentë</div><div class="t-quote" style="margin-top:6px">Qytet, kategori, paga, remote.</div></div>
+            <div class="t-item"><div style="font-weight:1000">Transparencë</div><div class="t-quote" style="margin-top:6px">Paga në EUR, përmbledhje të qarta.</div></div>
+            <div class="t-item"><div style="font-weight:1000">Aplikim i thjeshtë</div><div class="t-quote" style="margin-top:6px">CV & profil në vend.</div></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <div id="puno-footer"></div>
+
+  <script src="components/puno-core.js"></script>
+  <script src="components/auth.js"></script>
+
+  <script src="app.js" defer></script>
+  <script>
+    const form = document.getElementById('puno-login-form');
+    const msg = document.getElementById('puno-login-msg');
+    if(form){
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('login-email')?.value?.trim() || '';
+        const password = document.getElementById('login-password')?.value?.trim() || '';
+        const users = JSON.parse(localStorage.getItem('puno_users') || '[]');
+        const u = users.find(x => x.email === email && x.password === password);
+        if(!u){
+          msg.style.display = 'block';
+          msg.textContent = 'Të dhëna të pasakta (demo). Regjistrohu së pari.';
+          return;
+        }
+
+        // If account is disabled, block login
+        const disabledMap = (() => {
+          try { return JSON.parse(localStorage.getItem('puno_disabled_users') || '{}'); } catch { return {}; }
+        })();
+        if(disabledMap && disabledMap[email]){
+          msg.style.display = 'block';
+          const reason = disabledMap[email]?.reason ? ` Razlog: ${disabledMap[email].reason}` : '';
+          msg.textContent = `Ky llogari është e çaktivizuar.${reason}`;
+          return;
+        }
+
+        // Persist the full user so the site remembers email/password + role (demo/localStorage).
+        window.PUNO_AUTH?.setUser?.(u);
+
+        window.location.href = 'dashboard.html';
+      });
+    }
+  </script>
+</body>
+</html>
+
+
