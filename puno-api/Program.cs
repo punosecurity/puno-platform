@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+
 using Microsoft.EntityFrameworkCore;
 using puno_api.Data;
 
@@ -19,7 +20,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.Cookie.HttpOnly = true;     // Prevents JavaScript theft (XSS)
         options.Cookie.SameSite = SameSiteMode.Lax; // Allows cross-origin requests from frontend
         options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest; // works for http://localhost
-        
+
         // Prevent redirects to non-existent HTML pages; return JSON status codes instead
         options.Events.OnRedirectToLogin = context =>
         {
@@ -38,11 +39,13 @@ builder.Services.AddAuthorization();
 // 4. Configure CORS so your frontend can communicate with the API
 builder.Services.AddCors(options =>
     options.AddDefaultPolicy(policy =>
-        policy.WithOrigins("http://127.0.0.1:3000", "http://localhost:3000") // Add your frontend server URL here
+        policy.WithOrigins("http://127.0.0.1:3000", "http://localhost:3000")
               .AllowAnyMethod()
               .AllowAnyHeader()
-              .AllowCredentials())); // Crucial for sending cookies back and forth
+              .AllowCredentials()));
 
+
+builder.Services.Configure<puno_api.Controllers.EmailSettings>(builder.Configuration.GetSection("Email"));
 var app = builder.Build();
 
 app.UseRouting();
@@ -51,7 +54,8 @@ app.UseRouting();
 app.UseCors();
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
 
+
 app.Run();
+

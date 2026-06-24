@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("puno-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3aa3b3311b5476d3918e441d4f644f46715fa409")]
 [assembly: System.Reflection.AssemblyProductAttribute("puno-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("puno-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
