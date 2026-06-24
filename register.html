@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#070A12" />
+  <title>PUNO — Regjistrohu</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/PUNO.jpg" type="image/jpeg" />
+</head>
+<body>
+
+  <div class="bg" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="noise"></div></div>
+  <a class="skip-link" href="#main">Skip</a>
+
+  <div id="puno-navbar"></div>
+
+
+
+  <main id="main" class="section" style="padding-top:18px">
+    <div class="container" style="max-width:980px">
+      <div class="grid-2" style="grid-template-columns: 1fr 1fr">
+        <section class="glass-panel" data-elevate>
+          <div class="section__head section__head--compact" style="margin-bottom:12px">
+            <div>
+              <h1 class="h1" style="font-size:clamp(24px,2.8vw,34px); margin:0">Krijo llogari</h1>
+              <p class="sub" style="margin-top:8px">Profile + CV, ruajtje punësh dhe aplikim (demo).</p>
+            </div>
+          </div>
+
+          <div class="card" style="padding:16px;">
+            <form id="puno-register-form">
+              <div style="display:grid; gap:12px">
+                <div class="field" style="display:flex;">
+                  <span class="field__icon" aria-hidden="true">✉️</span>
+                  <input id="register-email" type="email" placeholder="Email" required />
+                </div>
+                <div class="field" style="display:flex;">
+                  <span class="field__icon" aria-hidden="true">👤</span>
+                  <input id="register-name" type="text" placeholder="Emri" required />
+                </div>
+                <div class="field" style="display:flex;">
+                  <span class="field__icon" aria-hidden="true">🗺️</span>
+                  <select id="register-location" required>
+                    <option value="">Zgjidh vendndodhjen</option>
+                    <option value="Kosovë">Kosovë</option>
+                    <option value="Shqipëri">Shqipëri</option>
+                    <option value="Prishtinë">Prishtinë</option>
+                    <option value="Prizren">Prizren</option>
+                    <option value="Pejë">Pejë</option>
+                    <option value="Gjakovë">Gjakovë</option>
+                    <option value="Ferizaj">Ferizaj</option>
+                    <option value="Tiranë">Tiranë</option>
+                    <option value="Durrës">Durrës</option>
+                    <option value="Shkodër">Shkodër</option>
+                  </select>
+                </div>
+                <div class="field" style="display:flex;">
+                  <span class="field__icon" aria-hidden="true">🔒</span>
+                  <input id="register-password" type="password" placeholder="Fjalëkalimi" required />
+                </div>
+                <button class="btn btn--primary" type="submit" style="width:100%; justify-content:center">Regjistrohu</button>
+              </div>
+            </form>
+
+            <div id="puno-register-msg" class="sub" style="margin-top:12px; padding:10px 12px; border-radius:14px; display:none; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.05);">
+              
+            </div>
+
+            <div style="margin-top:12px" class="sub">Duke u regjistruar, pranon termat (demo). Pa server, pa dërgim të dhënash.</div>
+          </div>
+        </section>
+
+        <aside class="glass-panel" data-elevate style="padding:16px">
+          <div class="glass-card__label">Çfarë merr?</div>
+          <div class="card__title" style="margin-top:10px; font-size:18px; font-weight:1000">Një profil që punon realisht</div>
+          <p class="sub" style="margin-top:10px; font-size:13.5px">CV i strukturuar, ruajtje punësh dhe aplikime të shpejta — i menduar për kandidatët.</p>
+          <div style="margin-top:14px; display:grid; gap:10px">
+            <div class="t-item"><div style="font-weight:1000">Ruajtje watchlist</div><div class="t-quote" style="margin-top:6px">Kthehesh kur të jesh gati.</div></div>
+            <div class="t-item"><div style="font-weight:1000">Aplikim me një klik</div><div class="t-quote" style="margin-top:6px">Profil + CV në vend.</div></div>
+            <div class="t-item"><div style="font-weight:1000">Këshilla për CV</div><div class="t-quote" style="margin-top:6px">Seksione që rrisin shanset.</div></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <div id="puno-footer"></div>
+
+  <script src="components/puno-core.js"></script>
+  <script src="components/auth.js"></script>
+
+
+
+  <script src="app.js" defer></script>
+  <script>
+
+    const form = document.getElementById('puno-register-form');
+    const msg = document.getElementById('puno-register-msg');
+
+    function show(text) {
+      if(!msg) return;
+      msg.textContent = text;
+      msg.style.display = 'block';
+    }
+
+    if(form){
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('register-email')?.value?.trim() || '';
+        const name = document.getElementById('register-name')?.value?.trim() || '';
+        const location = document.getElementById('register-location')?.value?.trim() || '';
+        const password = document.getElementById('register-password')?.value?.trim() || '';
+
+        if(!email || !name || !password){
+          show('Plotëso të gjitha fushat.');
+          return;
+        }
+
+        const users = JSON.parse(localStorage.getItem('puno_users') || '[]');
+        if(users.some(u => u.email === email)){
+          show('Ky email ekziston (demo). Hyr ose përdor email tjetër.');
+          return;
+        }
+
+        // Admin role can be added later (demo). Do not expose secrets.
+        const user = { email, name, location, password, role: 'user' };
+        users.push(user);
+        localStorage.setItem('puno_users', JSON.stringify(users));
+
+        // Stats: account created counter (demo)
+        try {
+          const k = 'puno_stats_total_accounts';
+          const cur = Number(localStorage.getItem(k) || '0');
+          localStorage.setItem(k, String(cur + 1));
+        } catch {}
+
+        window.PUNO_AUTH?.setUser?.(user);
+        window.location.href = 'dashboard.html';
+      });
+    }
+  </script>
+</body>
+</html>
+

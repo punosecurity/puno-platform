@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#070A12" />
+  <title>PUNO — Na shkruaj</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="noise"></div></div>
+  <a class="skip-link" href="#main">Skip</a>
+
+  <header class="topbar" role="banner">
+    <div class="container topbar__inner">
+      <a class="brand" href="index.html" aria-label="PUNO Home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 42V22c0-2.2 1.8-4 4-4h16" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M44 22v20c0 2.2-1.8 4-4 4H24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M24 26h16M24 38h16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand__name">PUNO</span>
+        <span class="brand__tag">Kontakt</span>
+      </a>
+      <nav class="nav" aria-label="Kryesore">
+        <a class="nav__link" href="jobs.html">Punë</a>
+        <a class="nav__link" href="companies.html">Kompani</a>
+        <a class="nav__link" href="about.html">Rreth</a>
+      </nav>
+      <button class="burger" type="button" aria-label="Hap menunë" aria-expanded="false" data-burger>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" data-mobile-nav>
+      <div class="container mobile-nav__inner">
+        <a class="nav__link" href="jobs.html">Punë</a>
+        <a class="nav__link" href="companies.html">Kompani</a>
+        <a class="nav__link" href="about.html">Rreth</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="section" style="padding-top:18px">
+    <div class="container">
+      <div class="section__head" style="margin-bottom:18px">
+        <div>
+          <h1 class="h1" style="font-size:clamp(28px,3.4vw,42px);">Na shkruaj</h1>
+          <p class="lead" style="margin-top:10px">Për çështje pune, punëdhënës dhe bashkëpunime.</p>
+        </div>
+            <a class="link" href="mailto:punosecurity@gmail.com">punosecurity@gmail.com <span aria-hidden="true">↗</span></a>
+
+      </div>
+
+
+          <div class="grid-2" style="align-items:start;">
+
+        <section class="glass-panel" data-elevate>
+
+          <div class="section__head section__head--compact" style="margin-bottom:12px">
+            <div>
+              <h2 class="h2" style="font-size:16px; font-weight:1000">Formular</h2>
+              <p class="sub" style="margin-top:6px">Mesazh i shpejtë (demo).</p>
+            </div>
+          </div>
+
+          <div class="card" style="padding:16px">
+            <form onsubmit="event.preventDefault(); alert('Demo: mesazhi u dërgua (pa server).');">
+              <div style="display:grid; gap:12px">
+                <div class="field" style="display:flex;"><span class="field__icon" aria-hidden="true">👤</span><input type="text" placeholder="Emri" required /></div>
+                <div class="field" style="display:flex;"><span class="field__icon" aria-hidden="true">✉️</span><input type="email" placeholder="Email" required /></div>
+                <div class="field" style="display:flex;"><span class="field__icon" aria-hidden="true">🏷️</span>
+                  <select required>
+                    <option value="">Zgjidh temën</option>
+                    <option>Kërkoj punë</option>
+                    <option>Jam punëdhënës</option>
+                    <option>Student / Intern</option>
+                    <option>Diasporë</option>
+                    <option>Bashkëpunim</option>
+                  </select>
+                </div>
+                <div class="field" style="display:block; padding:12px">
+                  <label class="sr-only" for="msg">Mesazh</label>
+                  <textarea id="msg" placeholder="Shkruaj mesazhin" style="width:100%; background:transparent; border:0; outline:0; color:var(--text); font-weight:750; font-size:14px; min-height:120px; resize:vertical" required></textarea>
+                </div>
+                <button class="btn btn--primary" type="submit" style="width:100%; justify-content:center">Dërgo mesazh</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <aside class="glass-panel" data-elevate style="padding:16px">
+          <div class="glass-card__label">Kontakt i drejtpërdrejtë</div>
+          <div class="card__title" style="margin-top:10px; font-size:18px; font-weight:1000">Kontakti i Platformës PUNO</div>
+          <p class="sub" style="margin-top:10px; font-size:13.5px">✉️ punosecurity@gmail.com</p>
+
+
+          <div style="margin-top:14px; display:grid; gap:10px">
+
+            <div class="t-item"><div style="font-weight:1000">✉️ punosecurity@gmail.com</div><div class="t-quote" style="margin-top:6px">Vetëm email. Përgjigje brenda 24–48 orësh (demo).</div></div>
+
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__grid">
+      <div><div class="footer-brand"><span class="brand__name">PUNO</span><span class="footer-brand__sub">Premium job platformë</span></div></div>
+      <div><div class="footer-col__title">Faqe</div><a class="footer-link" href="jobs.html">Punë</a><a class="footer-link" href="companies.html">Kompani</a></div>
+      <div><div class="footer-col__title">Llogaria</div><a class="footer-link" href="login.html">Hyr</a></div>
+      <div><div class="footer-col__title">Rreth</div><a class="footer-link" href="about.html">Rreth</a></div>
+
+    </div>
+    <div class="footer-bottom"><div class="container footer-bottom__inner"><span class="muted">© <span id="year"></span> PUNO.</span></div></div>
+  </footer>
+
+  <script src="app.js" defer></script>
+  <script>
+    const yearEl = document.getElementById('year');
+    if(yearEl) yearEl.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+

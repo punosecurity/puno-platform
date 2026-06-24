@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#070A12" />
+  <title>PUNO — Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/PUNO.jpg" type="image/jpeg" />
+</head>
+<body>
+
+  <div class="bg" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="noise"></div></div>
+  <a class="skip-link" href="#main">Skip</a>
+
+  <header class="topbar" role="banner">
+    <div class="container topbar__inner">
+      <a class="brand" href="index.html" aria-label="PUNO Home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 42V22c0-2.2 1.8-4 4-4h16" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M44 22v20c0 2.2-1.8 4-4 4H24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M24 26h16M24 38h16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand__name">PUNO</span>
+        <span class="brand__tag">Dashboard</span>
+      </a>
+      <nav class="nav" aria-label="Kryesore">
+        <a class="nav__link" href="jobs.html">Punë</a>
+        <a class="nav__link" href="companies.html">Kompani</a>
+        <a class="nav__link" href="students.html">Studentë</a>
+        <a class="nav__link" href="diaspora.html">Diasporë</a>
+        <a class="nav__link nav__link--cta" href="login.html">Hyr</a>
+      </nav>
+      <button class="burger" type="button" aria-label="Hap menunë" aria-expanded="false" data-burger>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" data-mobile-nav>
+      <div class="container mobile-nav__inner">
+        <a class="nav__link" href="jobs.html">Punë</a>
+        <a class="nav__link" href="companies.html">Kompani</a>
+        <a class="nav__link" href="students.html">Studentë</a>
+        <a class="nav__link" href="diaspora.html">Diasporë</a>
+        <a class="nav__link nav__link--cta" href="login.html">Hyr</a>
+        <a class="nav__link nav__link--ghost" href="register.html">Regjistrohu</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="section" style="padding-top:18px">
+    <div class="container">
+      <div class="section__head" style="margin-bottom:18px">
+        <div>
+          <h1 class="h1" style="font-size:clamp(28px,3.4vw,42px);">Mirë se erdhe, <span class="grad">Kandidat</span> 👋</h1>
+          <p class="lead" style="margin-top:10px">Menaxho profilin, CV-në dhe aplikimet. Ruajtjet janë lokale në këtë demo.</p>
+        </div>
+        <a class="link" href="jobs.html">Gjej punë <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="grid-2" style="align-items:start;">
+        <section class="glass-panel" data-elevate>
+          <div class="section__head section__head--compact" style="margin-bottom:10px">
+            <div>
+              <h2 class="h2" style="font-size:16px; font-weight:1000">Profili & CV</h2>
+              <p class="sub" style="margin-top:6px">Përshkrim i shkurtër + resume (simulim).</p>
+            </div>
+          </div>
+
+          <!-- Admin moderation (demo) -->
+          <div class="glass-panel" style="margin-top:14px; padding:16px" data-elevate>
+            <div class="section__head section__head--compact" style="margin-bottom:10px">
+              <div>
+                <h2 class="h2" style="font-size:16px; font-weight:1000">Admin: Moderim (demo)</h2>
+                <p class="sub" style="margin-top:6px">Çaktivizo/aktivizo llogari (localStorage).</p>
+              </div>
+            </div>
+
+            <div style="display:grid; gap:10px">
+              <div class="field" style="gap:12px">
+                <span class="field__icon" aria-hidden="true">👤</span>
+                <input id="admin-email" type="email" placeholder="Email i përdoruesit" style="font-weight:800" />
+              </div>
+
+              <div class="field" style="gap:12px">
+                <span class="field__icon" aria-hidden="true">📝</span>
+                <input id="admin-reason" type="text" placeholder="Arsye (opsionale)" style="font-weight:800" />
+              </div>
+
+              <div style="display:flex; gap:10px; flex-wrap:wrap">
+                <button class="btn btn--primary" type="button" id="admin-disable">Çaktivizo</button>
+                <button class="btn" type="button" id="admin-enable">Aktivizo</button>
+              </div>
+
+              <div id="admin-moderation-msg" class="sub" style="display:none; padding:10px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.05)"></div>
+            </div>
+          </div>
+
+          <div class="card" style="padding:16px">
+
+            <div style="display:flex; gap:12px; align-items:flex-start">
+              <div class="avatar" aria-hidden="true" style="width:62px;height:62px; border-radius:22px;"></div>
+              <div style="flex:1">
+                <div style="font-weight:1000; font-size:18px">Arben M.</div>
+                <div class="sub" style="margin-top:6px">Prishtinë • Inxhinier Softuerik • Full Stack</div>
+                <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px">
+                  <span class="tag">React</span>
+                  <span class="tag">Node.js</span>
+                  <span class="tag">TypeScript</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+              <button class="btn" type="button">Përditëso profil</button>
+              <button class="btn btn--primary" type="button">Ngarko CV</button>
+            </div>
+          </div>
+
+          <div class="glass-panel" style="margin-top:14px; padding:16px" data-elevate>
+            <div class="section__head section__head--compact" style="margin-bottom:10px">
+              <div>
+                <h2 class="h2" style="font-size:16px; font-weight:1000">Saved & Aplikuar</h2>
+                <p class="sub" style="margin-top:6px">Ruajtjet nga butoni “Ruaj” në detajet e punës.</p>
+              </div>
+            </div>
+
+            <div class="cards" style="grid-template-columns:1fr;" data-list="saved-jobs"></div>
+            <div class="muted" style="margin-top:10px" id="saved-empty">Nuk ke ruajtur ende punë.</div>
+          </div>
+        </section>
+
+        <aside class="glass-panel" data-elevate>
+          <div class="section__head section__head--compact" style="margin-bottom:12px">
+            <div>
+              <h2 class="h2" style="font-size:16px; font-weight:1000">Aplikime</h2>
+              <p class="sub" style="margin-top:6px">Statuset dhe rezultatet (simulim).</p>
+            </div>
+          </div>
+
+          <div class="card" style="padding:16px">
+            <div style="display:flex; justify-content:space-between; align-items:center">
+              <div>
+                <div class="glass-card__label">Në pritje</div>
+                <div style="font-weight:1000; font-size:24px; margin-top:4px">3</div>
+              </div>
+              <span class="tag tag--money">Përditëso</span>
+            </div>
+          </div>
+
+          <div class="card" style="padding:16px; margin-top:12px">
+            <div style="display:flex; justify-content:space-between; align-items:center">
+              <div>
+                <div class="glass-card__label">Intervista</div>
+                <div style="font-weight:1000; font-size:24px; margin-top:4px">1</div>
+              </div>
+              <span class="tag">Planifikim</span>
+            </div>
+          </div>
+
+          <div class="card" style="padding:16px; margin-top:12px">
+            <div style="display:flex; justify-content:space-between; align-items:center">
+              <div>
+                <div class="glass-card__label">Oferta</div>
+                <div style="font-weight:1000; font-size:24px; margin-top:4px">0</div>
+              </div>
+              <span class="tag">—</span>
+            </div>
+          </div>
+
+          <div class="glass-panel" style="margin-top:14px; padding:16px" data-elevate>
+            <div class="glass-card__label">Njoftime</div>
+            <div class="sub" style="margin-top:8px">Këshilla për CV-në dhe njoftime nga punëdhënësit.</div>
+            <div style="margin-top:12px; display:flex; flex-direction:column; gap:10px">
+              <div class="t-item"><div style="font-weight:950">Tip i shpejtë</div><div class="t-quote" style="margin-top:6px">Shto 2 rezultate konkrete në CV (me numra).</div></div>
+              <div class="t-item"><div style="font-weight:950">Kujtesë</div><div class="t-quote" style="margin-top:6px">Përfundimet për profilin rritin përgjigjen.</div></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__grid">
+      <div><div class="footer-brand"><span class="brand__name">PUNO</span><span class="footer-brand__sub">Premium job platformë</span></div></div>
+      <div><div class="footer-col__title">Faqe</div><a class="footer-link" href="jobs.html">Punë</a><a class="footer-link" href="companies.html">Kompani</a></div>
+      <div><div class="footer-col__title">Llogaria</div><a class="footer-link" href="login.html">Hyr</a><a class="footer-link" href="register.html">Regjistrohu</a></div>
+      <div><div class="footer-col__title">Kontakt</div><a class="footer-link" href="contact.html">Na shkruaj</a></div>
+    </div>
+    <div class="footer-bottom"><div class="container footer-bottom__inner"><span class="muted">© <span id="year"></span> PUNO.</span></div></div>
+  </footer>
+
+  <script src="app.js" defer></script>
+  <script>
+    // Admin moderation gating + handlers (client-side demo)
+
+    const adminEmailField = document.getElementById('admin-email');
+    const adminReasonField = document.getElementById('admin-reason');
+    const adminDisableBtn = document.getElementById('admin-disable');
+    const adminEnableBtn = document.getElementById('admin-enable');
+    const adminMsg = document.getElementById('admin-moderation-msg');
+
+    const savedKey = 'puno_saved_jobs';
+
+    function showAdminMsg(text, type){
+      if(!adminMsg) return;
+      adminMsg.style.display = 'block';
+      adminMsg.textContent = text;
+      adminMsg.style.borderColor = type === 'error' ? 'rgba(255,80,80,.4)' : 'rgba(255,255,255,.12)';
+    }
+
+    function getDisabledUsers(){
+      try { return JSON.parse(localStorage.getItem('puno_disabled_users') || '{}'); } catch { return {}; }
+    }
+
+    function setDisabledUsers(map){
+      localStorage.setItem('puno_disabled_users', JSON.stringify(map || {}));
+    }
+
+    function currentUser(){
+      return window.PUNO_AUTH?.getUser?.() || null;
+    }
+
+    const BOOTSTRAP_ADMIN_EMAIL = 'punosecurity@gmail.com';
+    const u = currentUser();
+    const isAdmin = !!(u && u.role === 'admin');
+
+    // One-time local bootstrap: if logged in as the known admin email, set role=admin in localStorage.
+    // No secrets are required.
+    if(u && String(u.email || '').toLowerCase() === BOOTSTRAP_ADMIN_EMAIL.toLowerCase() && u.role !== 'admin'){
+      const users = JSON.parse(localStorage.getItem('puno_users') || '[]');
+      const idx = users.findIndex(x => String(x.email || '').toLowerCase() === String(u.email || '').toLowerCase());
+      if(idx >= 0){
+        users[idx] = { ...users[idx], role: 'admin' };
+        localStorage.setItem('puno_users', JSON.stringify(users));
+        // update session object too
+        window.PUNO_AUTH?.setUser?.({ ...users[idx] });
+      }
+    }
+
+    const isAdminNow = !!(currentUser() && currentUser().role === 'admin');
+
+    function requireAdmin(){
+      if(!isAdminNow){
+        showAdminMsg('Nuk je admin. Kjo pjesë është e kufizuar.', 'error');
+        return false;
+      }
+      return true;
+    }
+
+    function setDisabled(email, reason){
+      const map = getDisabledUsers();
+      if(!email) return;
+      map[email] = { reason: reason || '', at: new Date().toISOString() };
+      setDisabledUsers(map);
+    }
+
+    function clearDisabled(email){
+      const map = getDisabledUsers();
+      if(!email) return;
+      delete map[email];
+      setDisabledUsers(map);
+    }
+
+    function wireAdmin(){
+      if(!adminEmailField || !adminDisableBtn || !adminEnableBtn) return;
+      adminDisableBtn.addEventListener('click', () => {
+        if(!requireAdmin()) return;
+        const email = adminEmailField.value.trim();
+        const reason = adminReasonField ? adminReasonField.value.trim() : '';
+        if(!email){
+          showAdminMsg('Shkruaj email-in që do të çaktivizohet.', 'error');
+          return;
+        }
+        setDisabled(email, reason);
+        showAdminMsg('Llogaria u çaktivizua (demo).', 'ok');
+      });
+
+      adminEnableBtn.addEventListener('click', () => {
+        if(!requireAdmin()) return;
+        const email = adminEmailField.value.trim();
+        if(!email){
+          showAdminMsg('Shkruaj email-in që do të aktivizohet.', 'error');
+          return;
+        }
+        clearDisabled(email);
+        showAdminMsg('Llogaria u aktivizua (demo).', 'ok');
+      });
+    }
+
+    wireAdmin();
+
+    // ---- Existing dashboard scripts below ----
+
+    // (no-op)
+  script>
+
+    const saved = JSON.parse(localStorage.getItem(savedKey) || '[]');
+    const listEl = document.querySelector('[data-list="saved-jobs"]');
+    const emptyEl = document.getElementById('saved-empty');
+
+    if(listEl){
+      if(saved.length === 0){
+        if(emptyEl) emptyEl.style.display = 'block';
+      } else {
+        if(emptyEl) emptyEl.style.display = 'none';
+        listEl.innerHTML = saved.map(j => `
+          <a class="card" href="job.html?id=${encodeURIComponent(j.id)}" style="display:block">
+            <div class="card__top">
+              <div>
+                <div class="card__title" style="margin-top:0; font-size:15px">${j.title}</div>
+                <div class="card__meta" style="margin-top:10px">🏢 ${j.company}</div>
+              </div>
+              <span class="tag">Ruajtur</span>
+            </div>
+          </a>
+        `).join('');
+      }
+    }
+
+    const yearEl = document.getElementById('year');
+    if(yearEl) yearEl.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+

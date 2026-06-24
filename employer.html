@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#070A12" />
+  <title>PUNO — Employer Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="noise"></div></div>
+  <a class="skip-link" href="#main">Skip</a>
+
+  <header class="topbar" role="banner">
+    <div class="container topbar__inner">
+      <a class="brand" href="index.html" aria-label="PUNO Home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 42V22c0-2.2 1.8-4 4-4h16" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M44 22v20c0 2.2-1.8 4-4 4H24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <path d="M24 26h16M24 38h16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand__name">PUNO</span>
+        <span class="brand__tag">Employer</span>
+      </a>
+      <nav class="nav" aria-label="Kryesore">
+        <a class="nav__link" href="jobs.html">Punë</a>
+        <a class="nav__link" href="companies.html">Kompani</a>
+        <a class="nav__link nav__link--cta" href="login.html">Hyr</a>
+      </nav>
+      <button class="burger" type="button" aria-label="Hap menunë" aria-expanded="false" data-burger>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" data-mobile-nav>
+      <div class="container mobile-nav__inner">
+        <a class="nav__link" href="jobs.html">Punë</a>
+        <a class="nav__link" href="companies.html">Kompani</a>
+        <a class="nav__link nav__link--cta" href="login.html">Hyr</a>
+        <a class="nav__link nav__link--ghost" href="register.html">Regjistrohu</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="section" style="padding-top:18px">
+    <div class="container">
+      <div class="section__head" style="margin-bottom:18px">
+        <div>
+          <h1 class="h1" style="font-size:clamp(28px,3.4vw,42px);">Panel i punëdhënësit</h1>
+          <p class="lead" style="margin-top:10px">Krijo vende pune, shiko aplikantët dhe menaxho ofertat (simulim).</p>
+        </div>
+        <a class="link" href="company.html?name=NEXA%20Labs">Shiko profil kompanie <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="grid-2" style="align-items:start;">
+        <section class="glass-panel" data-elevate>
+          <div class="section__head section__head--compact" style="margin-bottom:10px">
+            <div>
+              <h2 class="h2" style="font-size:16px; font-weight:1000">Vende pune</h2>
+              <p class="sub" style="margin-top:6px">Aktive dhe draft.</p>
+            </div>
+            <button class="btn btn--primary" type="button" onclick="alert('Demo: krijo punë')">Krijo job</button>
+          </div>
+
+          <div class="cards" style="grid-template-columns:1fr;" data-list="employer-jobs"></div>
+        </section>
+
+        <aside class="glass-panel" data-elevate>
+          <div class="section__head section__head--compact" style="margin-bottom:12px">
+            <div>
+              <h2 class="h2" style="font-size:16px; font-weight:1000">Aplikantët</h2>
+              <p class="sub" style="margin-top:6px">Shortlist + intervista.</p>
+            </div>
+          </div>
+
+          <div class="card" style="padding:16px">
+            <div style="display:flex; gap:12px; align-items:flex-start">
+              <div class="avatar" aria-hidden="true" style="width:54px;height:54px; border-radius:18px"></div>
+              <div style="flex:1">
+                <div style="font-weight:1000; font-size:15.5px">Aplikim i ri</div>
+                <div class="sub" style="margin-top:6px">Arben M. — Programues Full Stack</div>
+                <div class="sub" style="margin-top:8px">Kualifikim i përshtatshëm • 2 min më parë</div>
+              </div>
+              <span class="tag tag--money">Shiko</span>
+            </div>
+          </div>
+
+          <div class="card" style="padding:16px; margin-top:12px">
+            <div style="display:flex; justify-content:space-between; align-items:center">
+              <div>
+                <div class="glass-card__label">Shortlist</div>
+                <div style="font-weight:1000; font-size:24px; margin-top:4px">6</div>
+              </div>
+              <span class="tag">Intervista</span>
+            </div>
+          </div>
+
+          <div class="glass-panel" style="margin-top:14px; padding:16px" data-elevate>
+            <div class="glass-card__label">Analitikë</div>
+            <div class="sub" style="margin-top:8px">Shiko performancën e jobeve, shkallën e përgjigjes dhe kohën e intervistës.</div>
+            <div class="stats" style="grid-template-columns:1fr 1fr; margin-top:14px">
+              <div class="stat"><div class="stat__value">78%</div><div class="stat__label">shkallë përgjigje</div></div>
+              <div class="stat"><div class="stat__value">3.2</div><div class="stat__label">ditë deri në intervistë</div></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__grid">
+      <div><div class="footer-brand"><span class="brand__name">PUNO</span><span class="footer-brand__sub">Premium job platformë</span></div></div>
+      <div><div class="footer-col__title">Faqe</div><a class="footer-link" href="jobs.html">Punë</a><a class="footer-link" href="companies.html">Kompani</a></div>
+      <div><div class="footer-col__title">Kontakt</div><a class="footer-link" href="contact.html">Na shkruaj</a></div>
+      <div><div class="footer-col__title">Llogaria</div><a class="footer-link" href="login.html">Hyr</a><a class="footer-link" href="register.html">Regjistrohu</a></div>
+    </div>
+    <div class="footer-bottom"><div class="container footer-bottom__inner"><span class="muted">© <span id="year"></span> PUNO.</span></div></div>
+  </footer>
+
+  <script src="app.js" defer></script>
+  <script>
+    const jobs = [
+      {t:'Programues Full Stack', city:'Prishtinë', applicants:'24', salary:'1,400–2,200€'},
+      {t:'Inxhinier Softuerik', city:'Prizren', applicants:'14', salary:'1,300–2,000€'},
+      {t:'Product Designer', city:'Tiranë', applicants:'11', salary:'1,100–1,700€'}
+    ];
+
+    const el = document.querySelector('[data-list="employer-jobs"]');
+    if(el){
+      el.innerHTML = jobs.map(j=>`
+        <div class="card" style="padding:16px; margin-bottom:12px">
+          <div class="card__top">
+            <div>
+              <div class="tag tag--money">${j.salary}</div>
+              <div class="card__title" style="margin-top:12px">${j.t}</div>
+              <div class="card__meta"><span>📍 ${j.city}</span><span>👤 ${j.applicants} aplikantë</span></div>
+            </div>
+            <span class="tag">Aktive</span>
+          </div>
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+            <button class="btn" type="button" onclick="alert('Demo: Menaxho job')">Menaxho</button>
+            <button class="btn btn--primary" type="button" onclick="alert('Demo: Shiko aplikantët')">Aplikantët</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    const yearEl = document.getElementById('year');
+    if(yearEl) yearEl.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+

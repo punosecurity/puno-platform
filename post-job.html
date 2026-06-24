@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#070A12" />
+  <title>PUNO — Posto Punë</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/PUNO.jpg" type="image/jpeg" />
+</head>
+<body>
+  <div class="bg" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="noise"></div></div>
+  <a class="skip-link" href="#main">Skip</a>
+
+  <div id="puno-navbar"></div>
+
+  <main id="main" class="section" style="padding-top:18px">
+    <div class="container" style="max-width:980px">
+      <div class="section__head" style="margin-bottom:18px">
+        <div>
+          <h1 class="h1" style="font-size:clamp(24px,2.8vw,34px); margin:0">Posto një punë (demo)</h1>
+          <p class="sub" style="margin-top:8px">Formë profesionale. Ruajtja është lokale (localStorage). Të dhënat shfaqen në `jobs.html`.</p>
+        </div>
+        <a class="link" href="jobs.html">← Kthehu te Punët</a>
+      </div>
+
+      <section class="glass-panel" data-elevate style="padding:16px;">
+        <div class="section__head section__head--compact" style="margin-bottom:12px">
+          <div>
+            <h2 class="h2" style="font-size:16px; font-weight:1000">Detajet e vendit të punës</h2>
+            <p class="sub" style="margin-top:6px">Plotëso të gjitha fushat me kujdes.</p>
+          </div>
+        </div>
+
+        <div id="post-job-msg" class="sub" style="display:none; padding:10px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.05)"></div>
+
+        <form id="post-job-form" style="display:grid; gap:14px; margin-top:10px">
+          <div class="grid-2" style="gap:14px">
+            <div class="field">
+              <label class="sub" style="display:block; margin-bottom:6px; font-weight:900">Titulli i punës *</label>
+              <input id="pj-title" type="text" required placeholder="p.sh. Programues Full Stack" />
+            </div>
+
+            <div class="field">
+              <label class="sub" style="display:block; margin-bottom:6px; font-weight:900">Kompania *</label>
+              <input id="pj-company" type="text" required placeholder="p.sh. NEXA Labs" />
+            </div>
+          </div>
+
+          <div class="grid-2" style="gap:14px">
+            <div class="field">
+              <label class="sub" style="display:block; margin-bottom:6px; font-weight:900">Qyteti *</label>
+              <select id="pj-city" required>
+                <option value="">Zgjidh qytetin</option>
+                <option>Kosovë</option>
+                <option>Shqipëri</option>
+                <option>Prishtinë</option>
+                <option>Prizren</option>
+                <option>Pejë</option>
+                <option>Gjakovë</option>
+                <option>Ferizaj</option>
+                <option>Tiranë</option>
+                <option>Durrës</option>
+                <option>Shkodër</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="sub" style="display:block; margin-bottom:6px; font-weight:900">Lloji i punës *</label>
+              <select id="pj-workMode" required>
+                <option value="">Zgjidh</option>
+                <option>Remote</option>
+                <option>Hibrid</option>
+                <option>On-site</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid-2" style="gap:14px">
+            <div class="field">
+              <label class="sub" style="display:block; margin-bottom:6px; font-weight:900">Kategoria/Tag *</label>
+              <input id="pj-tag" type="text" required placeholder="p.sh. IT, Marketing, Financa" />
+            </div>
+
+            <div class="field">
+              <label class="sub" style="display:block; margin-bottom:6px; font-weight:900">Gjuha *</label>
+              <input id="pj-language" type="text" required placeholder="p.sh. Shqip" />
+            </div>
+          </div>
+
+          <div class="grid-2" style="gap:14px">
+            <div class="field">
+              <label class="sub" style="display:block; margin-bottom:6px; font-weight:900">Paga (EUR) *</label>
+              <input id="pj-salary" type="text" required placeholder="p.sh. 1,400–2,200€" />
+            </div>
+
+            <div class="field">
+              <label class="sub" style="display:block; margin-bottom:6px; font-weight:900">Afati *</label>
+              <input id="pj-deadline" type="text" required placeholder="p.sh. Afati: 18 Qershor" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="sub" style="display:block; margin-bottom:6px; font-weight:900">Përgjegjësitë (çdo rresht = 1 artikull) *</label>
+            <textarea id="pj-resp" required rows="5" placeholder="• Ndërto veçori...
+• Punoni me partnerë...
+• Optimizoni performancën...
+• Mentorim..." ></textarea>
+          </div>
+
+          <div class="field">
+            <label class="sub" style="display:block; margin-bottom:6px; font-weight:900">Aftësitë (ndaji me presje) *</label>
+            <input id="pj-skills" type="text" required placeholder="p.sh. React, TypeScript, Node.js, PostgreSQL" />
+          </div>
+
+          <div class="field">
+            <label class="sub" style="display:block; margin-bottom:6px; font-weight:900">Përfitime (3-5 rreshta, çdo rresht: titull|përshkrim) *</label>
+            <textarea id="pj-benefits" required rows="4" placeholder="Zhvillim profesional|Kurse të brendshme...
+Puna fleksibile|Remote kur është e mundur...
+Siguri financiare|Bonus & transparencë..." ></textarea>
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap">
+            <button class="btn btn--primary" type="submit">Posto punën</button>
+            <a class="btn" href="jobs.html" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center">Anulo</a>
+          </div>
+        </form>
+      </section>
+
+      <section class="glass-panel" data-elevate style="padding:16px; margin-top:14px">
+        <div class="section__head section__head--compact" style="margin-bottom:10px">
+          <div>
+            <h2 class="h2" style="font-size:16px; font-weight:1000">Si funksionon (demo)</h2>
+            <p class="sub" style="margin-top:6px">Të dhënat ruhen në `localStorage.puno_jobs`. Çdo postim shfaqet menjëherë në listë.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="puno-footer"></div>
+
+  <script src="components/puno-core.js"></script>
+  <script src="components/auth.js"></script>
+  <script>
+    const msgEl = document.getElementById('post-job-msg');
+    const form = document.getElementById('post-job-form');
+
+    function showMsg(text){
+      if(!msgEl) return;
+      msgEl.textContent = text;
+      msgEl.style.display = 'block';
+    }
+
+    function parseLines(text){
+      return String(text || '')
+        .split('\n')
+        .map(s => s.trim())
+        .filter(Boolean)
+        .map(s => s.replace(/^[-•\s]+/, ''));
+    }
+
+    function parseSkills(text){
+      return String(text || '')
+        .split(',')
+        .map(s => s.trim())
+        .filter(Boolean);
+    }
+
+    function parseBenefits(text){
+      return String(text || '')
+        .split('\n')
+        .map(s => s.trim())
+        .filter(Boolean)
+        .map(line => {
+          const parts = line.split('|').map(p => p.trim());
+          return { t: parts[0] || '', d: parts.slice(1).join('|') || '' };
+        })
+        .filter(b => b.t && b.d);
+    }
+
+    function loadJobs(){
+      try{
+        const arr = JSON.parse(localStorage.getItem('puno_jobs') || '[]');
+        return Array.isArray(arr) ? arr : [];
+      }catch{ return []; }
+    }
+
+    function saveJobs(arr){
+      localStorage.setItem('puno_jobs', JSON.stringify(arr || []));
+    }
+
+    if(form){
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const title = document.getElementById('pj-title')?.value?.trim() || '';
+        const company = document.getElementById('pj-company')?.value?.trim() || '';
+        const city = document.getElementById('pj-city')?.value?.trim() || '';
+        const workMode = document.getElementById('pj-workMode')?.value?.trim() || '';
+        const tag = document.getElementById('pj-tag')?.value?.trim() || '';
+        const language = document.getElementById('pj-language')?.value?.trim() || '';
+        const salary = document.getElementById('pj-salary')?.value?.trim() || '';
+        const deadline = document.getElementById('pj-deadline')?.value?.trim() || '';
+
+        const resp = parseLines(document.getElementById('pj-resp')?.value);
+        const skills = parseSkills(document.getElementById('pj-skills')?.value);
+        const benefits = parseBenefits(document.getElementById('pj-benefits')?.value);
+
+        if(!title || !company || !city || !workMode || !tag || !language || !salary || !deadline || resp.length < 1 || skills.length < 1 || benefits.length < 1){
+          showMsg('Plotëso të gjitha fushat (përgjegjësitë/aftësitë/përfitimet duhet të kenë të paktën 1 artikull).');
+          return;
+        }
+
+        const jobs = loadJobs();
+        const id = 'u' + Date.now();
+
+        jobs.unshift({
+          id,
+          title,
+          company,
+          city,
+          type: `${workMode}`,
+          salary,
+          salaryNote: '',
+          tag,
+          language,
+          workMode,
+          municipality: city,
+          country: city,
+          region: 'Europe',
+          meta: ['—'],
+          tags: [tag, ...skills.slice(0,2)],
+          resp,
+          skills,
+          deadline,
+          deadlineNote: '',
+          status: 'Aktive',
+          apps: 0,
+          benefits,
+          companyLink: 'company.html?name=' + encodeURIComponent(company)
+        });
+
+        saveJobs(jobs);
+        showMsg('Punë e postuar ✓ Shfaqet në `jobs.html`.');
+        setTimeout(() => {
+          window.location.href = 'jobs.html';
+        }, 900);
+      });
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,44 @@
+<!-- Reusable Navbar component (static include) -->
+<header class="topbar" role="banner">
+  <div class="container topbar__inner">
+    <a class="brand" href="index.html" aria-label="PUNO Home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 42V22c0-2.2 1.8-4 4-4h16" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <path d="M44 22v20c0 2.2-1.8 4-4 4H24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <path d="M24 26h16M24 38h16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand__name">PUNO</span>
+      <span class="brand__tag">Platformë</span>
+    </a>
+
+    <nav class="nav" aria-label="Kryesore">
+      <a class="nav__link" href="jobs.html">Punë</a>
+      <a class="nav__link" href="companies.html">Kompani</a>
+      <a class="nav__link" href="students.html">Studentë</a>
+      <a class="nav__link" href="diaspora.html">Diasporë</a>
+      <a class="nav__link nav__link--cta" href="login.html" data-nav-auth="login">Hyr</a>
+      <a class="nav__link" href="dashboard.html" data-nav-auth="dashboard" style="display:none">Dashboard</a>
+      <button class="nav__link" type="button" data-nav-auth="logout" style="display:none; background:transparent; border:1px solid rgba(255,255,255,.10); padding:10px 10px; border-radius:12px; cursor:pointer" aria-label="Dil">Dil</button>
+    </nav>
+
+    <button class="burger" type="button" aria-label="Hap menunë" aria-expanded="false" data-burger>
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-nav" data-mobile-nav>
+    <div class="container mobile-nav__inner">
+      <a class="nav__link" href="jobs.html">Punë</a>
+      <a class="nav__link" href="companies.html">Kompani</a>
+      <a class="nav__link" href="students.html">Studentë</a>
+      <a class="nav__link" href="diaspora.html">Diasporë</a>
+      <a class="nav__link nav__link--cta" href="login.html" data-nav-auth="login-mobile">Hyr</a>
+      <a class="nav__link" href="dashboard.html" data-nav-auth="dashboard-mobile" style="display:none">Dashboard</a>
+      <button class="nav__link" type="button" data-nav-auth="logout-mobile" style="display:none; background:transparent; border:1px solid rgba(255,255,255,.10); padding:12px 12px; border-radius:12px; cursor:pointer" aria-label="Dil">Dil</button>
+      <a class="nav__link nav__link--ghost" href="register.html">Regjistrohu</a>
+    </div>
+  </div>
+</header>
+
